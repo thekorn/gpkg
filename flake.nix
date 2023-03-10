@@ -23,5 +23,6 @@
           };
           default = packages.all;
         };
+        defaultPackage = self.packages.${system}.gpkg;
       });
 }
