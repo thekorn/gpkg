@@ -10,7 +10,7 @@ jobs:
   fmt:
     runs-on: ubuntu-latest
     steps:
-    - uses: hecrj/setup-rust-action@v1
+    - uses: hecrj/setup-rust-action@v2
       with:
         rust-version: stable
     - uses: actions/checkout@v1
@@ -27,7 +27,7 @@ jobs:
         # - windows
     steps:
     - uses: actions/checkout@v1
-    - uses: hecrj/setup-rust-action@v1
+    - uses: hecrj/setup-rust-action@v2
       with:
         rust-version: stable
     - name: Build
@@ -37,7 +37,7 @@ jobs:
       env:
         RUST_LOG: debug
         RUST_BACKTRACE: 1
-    - uses: actions/upload-artifact@v1
+    - uses: actions/upload-artifact@v4
       with:
         name: gpkg-${{ matrix.machine }}
         path: ./target/release/gpkg
